@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>userdetails</title>
+</head>
+<body>
+<section>
+
+    <h1 th:text="${users}"></h1>
+<table>
+    <tr>
+        <th>USer id</th>
+
+    </tr>
+    <tr  th:each="user:${users}">
+
+
+    </tr>
+
+
+</table>
+</section>
+</body>
+</html>

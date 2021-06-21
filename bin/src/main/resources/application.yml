@@ -1,0 +1,21 @@
+server:
+  port: 1212
+spring:
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      exclude: static/**,public/**,templates/**
+  datasource:
+    username: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/smartcontactmanager
+    password: nanda
+  #    url: jdbc:h2:mem:testdb
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+

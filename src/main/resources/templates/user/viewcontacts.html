@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="user/userbase::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>View contact</title>
+    <script th:src="@{/js/jquery-1.8.3.min.js}"></script>
+</head>
+<body>
+<section>
+<div class="card">
+
+    <div class="card-header">
+        <h3 class="text-center">Your Contacts</h3>
+    </div>
+    <div class="card-body">
+        <span th:text="${contacts.get(1)}"></span>
+
+    </div>
+</div>
+</section>
+</body>
+</html>

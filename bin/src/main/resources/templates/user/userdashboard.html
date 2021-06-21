@@ -1,0 +1,40 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(man)">
+<head>
+    <meta charset="UTF-8">
+    <title>user dasfboard</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<!--navbar starting-->
+
+<nav class="navbar navbar-expand-lg  headers">
+    <a class="navbar-brand" href="#">SmartContactManager</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a class="nav-link" href="/">Home<span
+                    class="sr-only">(current)</span></a></li>
+            <li class="nav-item"><a class="nav-link disabled" href="#">About</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="/logout">logout</a>
+        </ul>
+
+    </div>
+</nav>
+
+<!--Navbar ending-->
+
+<div th:replace="${man}">
+
+</div>
+</body>
+</html>

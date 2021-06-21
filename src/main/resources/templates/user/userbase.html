@@ -1,0 +1,162 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:fragment="layout(man)">
+<head>
+    <meta charset="UTF-8">
+    <title>user dasfboard</title>
+    <!-- <meta http-equiv="refresh" content="1"> -->
+    <script type="text/javascript"
+            src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+
+    </script>
+
+
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/css/style.css}" type="text/css">
+<!--    <link rel="stylesheet" th:href="@{/css/all.css}" type="text/css">-->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"-->
+    <!--          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+
+
+</head>
+<style>
+    .navba {
+        color: aqua;
+        background-color: chartreuse;
+        font-size: large;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .sidebar {
+        width: 18%;
+        background-color: beige;
+        height: 100%;
+        position: fixed;
+        padding-top: 15mm;
+    }
+
+    .sidebar a {
+        display: block;
+        /* padding-top: 4mm; */
+        width: 100%;
+        padding: 23px 25px;
+        text-decoration: none;
+        color: dimgray;
+    }
+
+    .sidebar a:hover {
+        background-color: mediumorchid;
+    }
+
+    @media only screen and(max-width: 600px) {
+    }
+
+    .sidebar .divider {
+        height: .5px;
+        width: 100%;
+        background-color: #e2e2e2;
+        margin-top: 10px;
+    }
+
+    .content {
+        margin-left: 20%;
+    }
+
+    .sidebar .crossbtn {
+        position: absolute;
+        top: 0;
+        right: 35px;
+        font-size: 35px;
+        text-align: right;
+    }
+</style>
+<body>
+
+<!--navbar starting-->
+
+<nav class="fixed-top navbar navbar-expand-lg  headers navba">
+    <a class="navbar-brand" href="#">SmartContactManager</a>
+    <button class="navbar-toggler " type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a class="nav-link" href="/">Home<span
+                    class="sr-only">(current)</span></a></li>
+            <li class="nav-item"><a class="nav-link disabled" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <!--<span th:text="${}"></span>-->
+            <li class="nav-item"></li>
+            <a class="nav-link" href="/logout">logout</a>
+        </ul>
+
+    </div>
+</nav>
+
+<!--Navbar ending-->
+
+<!--Side bar starting  -->
+<div class="sidebar">
+    <span class="crossbtn" id="sidebar">&times;</span> <a
+        th:href="@{/user/}" class="item"><i class="fas fa-home"></i>Home</a>
+    <a class="item" th:href="@{/user/viewcontacts}"><i class="fas fa-id-card alt"></i>ViewContacts</a> <a
+        th:href="@{/user/addcontact}" class="item"><i
+        class="fas fa-pencil-alt"></i>Add Contacts</a> <a class="item"><i
+        class="fas fa-user-circle"></i>Your Profile</a> <a href="" class="item"><i
+        class="fas fa-cogs"></i>Settings</a> <a href="" class="item"><i
+        class="fas fa-sign-out-alt"></i>Logout</a>
+    <div class="divider"></div>
+</div>
+<!-- Side bar ending -->
+<!--Content starting  -->
+<div class="content">
+    <i class="fas fa-bars m-3" id="content">ndas</i>
+    <div th:replace="${man}"></div>
+</div>
+<!--Content ending  -->
+<script>
+    $(document).ready(function () {
+
+        function toggleclick() {
+
+            if ($(".sidebar").is(":visible")) {
+                $(".sidebar").css("display", "none");
+                $(".content").css("margin-left", "0%");
+            } else {
+                $(".sidebar").css("display", "block");
+                $(".content").css("margin-left", "20%");
+            }
+
+        }
+
+        $("#sidebar").click(function () {
+            toggleclick();
+            /* $(".sidebar").css("display", "none");
+            $(".content").css("margin-left", "0%"); */
+
+        })
+
+        $("#content").click(function () {
+            toggleclick();
+
+            /* $(".sidebar").css("display", "block");
+            $(".content").css("margin-left", "20%"); */
+
+        })
+
+    });
+</script>
+
+
+</body>
+</html>
