@@ -32,6 +32,7 @@ public class Homeontroller {
         List<User> users = service.getallusers();
         return new ModelAndView("home", "users", users);
     }
+//this is nanda kishore code
 
     @RequestMapping("/register")
     public ModelAndView register(@ModelAttribute("user") User user) {
