@@ -19,7 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 import first.man.helper.Message;
 import first.man.model.User;
 import first.man.service.Userservice;
-
+//this is rest controller where all code related to  rest end points 
 @RestController
 public class Homeontroller {
     @Autowired
